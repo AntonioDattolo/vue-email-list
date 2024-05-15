@@ -13,11 +13,16 @@
 </head>
 <body class="myBg">
     <div id="app">
-        <button @click="getMail"> premi</button >
-        <input type="number" @keyup.enter="getMail" v-model="howMuch">
-            <ul>
-                <li v-for="option in mailList">{{option}}</li>
-            </ul>
+        <main class="container my-5 p-3">
+            <h1 class="text-center m-3 my-5">Generatore di Mail</h1>
+            <section class="bg-info p-3 text-center">
+                <button class="m-3 btn btn-outline-warning" @click="getMail"> Generate</button >
+                    <input class="mx-2 d-inline w-50 form-control" placeholder="How Much?" type="number" @keyup.enter="getMail" v-model="howMuch">
+                    <ul class="my-3 p-3 list-group-flush ">
+                        <li class="list-group-item w-25 fs-3" v-for="option in mailList">{{option}}</li>
+                    </ul>
+                </main>
+            </section>
     </div>
     <script src="./js/main.js"></script>
 </body>
