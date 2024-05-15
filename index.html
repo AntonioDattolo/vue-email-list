@@ -14,6 +14,7 @@
 <body class="myBg">
     <div id="app">
         <button @click="getMail"> premi</button >
+        <input type="number" @keyup.enter="getMail" v-model="howMuch">
             <ul>
                 <li v-for="option in mailList">{{option}}</li>
             </ul>
