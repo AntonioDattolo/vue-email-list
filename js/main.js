@@ -5,16 +5,33 @@ const myConfig = {
 	data() {
 		
 		return {
-			message: 'Welcome to VueJS!'
+			message: 'Welcome to VueJS!',
+			mailList:[],
+			mail : 0
 		}
 	},
 	methods: {
-		stampaMsg() {
-			
-		}
+		// getMail(){
+		// 	axios.get(`https://flynn.boolean.careers/exercises/api/random/mail`).then((response) => {
+		// 		let result = response.data.response
+		// 	  console.log(result);
+			  
+		// 	});
+		// }
+		getMail() {
+		for(x=0; x < 10;x++){
+
+				axios.get(`https://flynn.boolean.careers/exercises/api/random/mail`).then((result) => { //attenzione all'arrow function!!
+                let mail = result.data.response;
+                console.log("Ricevuta risposta",  mail);
+				this.mailList.push(mail)
+            });
+        }
+	}
+		
 	},
 	mounted(){
-		window.vue = this;
+		window.vue = this
 	}
 };
 
