@@ -20,7 +20,7 @@ const myConfig = {
 					this.mailList.push(mail)
 				});
 			}
-		}
+		},
 	},
 	mounted(){
 		window.vue = this

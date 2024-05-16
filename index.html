@@ -15,11 +15,11 @@
     <div id="app">
         <main class="container my-5 p-3">
             <h1 class="text-center m-3 my-5">Generatore di Mail</h1>
-            <section class="bg-info p-3 text-center">
+            <section class="bg-info rounded-2 p-3 text-center">
                 <button class="m-3 btn btn-outline-warning" @click="getMail"> Generate</button >
                     <input class="mx-2 d-inline w-50 form-control" placeholder="How Much?" type="number" @keyup.enter="getMail" v-model="howMuch">
                     <ul class="my-3 p-3 list-group-flush ">
-                        <li class="list-group-item w-25 fs-3" v-for="option in mailList">{{option}}</li>
+                        <li class="list-group-item w-25 fs-3 text-start" v-for="option in mailList" v-if="this.howMuch == this.mailList.length">{{option}}</li>
                     </ul>
                 </main>
             </section>
